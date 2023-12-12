@@ -239,7 +239,7 @@ class Crud extends React.Component {
         <div className="row">
           <Title
             className="text-center fs-6 mb-3"
-            children="Jeemacoder gestion utilisateurs children"
+            children="Jeemacoder gestion utilisateurs"
           />
 
           <form

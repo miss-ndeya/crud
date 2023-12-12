@@ -196,10 +196,13 @@ class Crud extends React.Component {
   };
 
   componentDidMount() {
-    const StoredUtilisateurs = JSON.parse(
-      localStorage.getItem("utilisateurs") || []
-    );
-    this.setState({ utilisateurs: StoredUtilisateurs });
+    let StoredUtilisateurs = localStorage.getItem("utilisateurs");
+
+    if (StoredUtilisateurs) {
+      StoredUtilisateurs = JSON.parse("utilisateurs");
+
+      this.setState({ utilisateurs: StoredUtilisateurs });
+    }
   }
 
   componentDidUpdate() {
@@ -290,7 +293,9 @@ class Crud extends React.Component {
             <div className="col-md-12">
               <Button
                 type="submit"
-                children={this.state.modifierId === false ? "Ajoute" : "Modifier"}
+                children={
+                  this.state.modifierId === false ? "Ajoute" : "Modifier"
+                }
                 className={
                   this.state.modifierId === false
                     ? "btn btn-success w-100"
